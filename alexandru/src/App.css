@@ -1,0 +1,130 @@
+@import url('https://use.typekit.net/mce0lyc.css');
+
+a:link {
+  color: #007bff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+}
+body > :not(code) {
+  font-family: acumin-pro, sans-serif;
+  font-size: 1.1rem;
+}
+code {
+  font-family: source-code-pro, sans-serif;
+}
+
+.navbar-light {
+  background-color: #ffffff !important;
+}
+
+.navbar-brand {
+  font-size: larger;
+  font-weight: 600 !important;
+  color: black;
+  align-items: center !important;
+}
+
+.navbar-nav {
+  align-items: baseline;
+
+  text-decoration: underline !important;
+}
+
+.first {
+  color: black !important;
+  -webkit-transition: color 300ms ease-out;
+  -moz-transition: color 300ms ease-out;
+  -o-transition: color 300ms ease-out;
+  transition: color 300ms ease-out;
+  border: black;
+}
+
+.first:hover {
+  color: #007bff !important;
+  -webkit-transition: color 200ms ease-out;
+  -moz-transition: color 200ms ease-out;
+  -o-transition: color 200ms ease-out;
+  transition: color 200ms ease-out;
+}
+
+.second {
+  color: black !important;
+  -webkit-transition: color 300ms ease-out;
+  -moz-transition: color 300ms ease-out;
+  -o-transition: color 300ms ease-out;
+  transition: color 300ms ease-out;
+}
+
+.second:hover {
+  color: limegreen !important;
+  -webkit-transition: color 200ms ease-out;
+  -moz-transition: color 200ms ease-out;
+  -o-transition: color 200ms ease-out;
+  transition: color 200ms ease-out;
+}
+
+.third {
+  color: black !important;
+  -webkit-transition: color 300ms ease-out;
+  -moz-transition: color 300ms ease-out;
+  -o-transition: color 300ms ease-out;
+  transition: color 300ms ease-out;
+}
+
+.third:hover {
+  color: orange !important;
+  -webkit-transition: color 200ms ease-out;
+  -moz-transition: color 200ms ease-out;
+  -o-transition: color 200ms ease-out;
+  transition: color 200ms ease-out;
+}
+
+.fourth {
+  color: black !important;
+  -webkit-transition: color 300ms ease-out;
+  -moz-transition: color 300ms ease-out;
+  -o-transition: color 300ms ease-out;
+  transition: color 300ms ease-out;
+}
+.fourth:hover {
+  color: crimson !important;
+  -webkit-transition: color 200ms ease-out;
+  -moz-transition: color 200ms ease-out;
+  -o-transition: color 200ms ease-out;
+  transition: color 200ms ease-out;
+}
+.item-links {
+  color: black;
+}
+
+.item-links:hover {
+  color: #007bff;
+}
+
+.ramblings {
+  color: darkgray;
+}
+
+.navbar-toggler {
+  border: 0 !important;
+}
+
+.navbar-brand:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: relative;
+  background: black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navbar-brand:hover:after {
+  width: 100%;
+  left: 0;
+}

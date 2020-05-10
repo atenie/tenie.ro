@@ -1,0 +1,79 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Container, Row, Col } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Navigation from './components/layout/Navigation';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Content from './components/content/Content';
+
+class App extends Component {
+  state = {
+    arr: [],
+    post: 'Loading...',
+    loading: false,
+  };
+
+  async componentDidMount() {
+    this.setState({ loading: true });
+    const res = await axios.get(
+      'https://alexandru.tenie.ro/api/loader.php?index'
+    );
+    this.setState({ arr: res.data.titles, loading: false });
+  }
+
+  getItem = async (item) => {
+    this.setState({ loading: true });
+    const res = await axios.get(
+      `https://alexandru.tenie.ro/api/loader.php?name=${item}.md&folder=posts`
+    );
+    this.setState({ post: res.data, loading: false });
+  };
+
+  render() {
+    const { post, loading, arr } = this.state;
+    return (
+      <Router>
+        <Container>
+          <Row>
+            <Col xs={1} sm={1} md={1} lg={3} xl={3}></Col>
+            <Col
+              xs={10}
+              sm={10}
+              md={10}
+              lg={6}
+              xl={6}
+              className='justify-content-center'
+            >
+              <Navigation className='navbar-center' />
+              <Switch>
+                <Route exact path='/'>
+                  <Home loading={loading} titles={arr}></Home>
+                </Route>
+                <Route exact path='/whoami'>
+                  <About></About>
+                </Route>
+                <Route
+                  exact
+                  path='/post/:item'
+                  render={(props) => (
+                    <Content
+                      {...props}
+                      getItem={this.getItem}
+                      post={post}
+                      loading={loading}
+                    ></Content>
+                  )}
+                ></Route>
+              </Switch>
+            </Col>
+            <Col xs={1} sm={1} md={1} lg={3} xl={3}></Col>
+          </Row>
+        </Container>
+      </Router>
+    );
+  }
+}
+
+export default App;
